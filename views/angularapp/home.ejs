@@ -1,0 +1,20 @@
+<!-- home.html lists all employees and link to their profile -->
+<table class="table table-striped">
+  <thead>
+      <th>Número</th>
+      <th>Nombre de emplead </th>
+      <th>Link to profile</th>
+  </thead>
+  <!-- ng-repeat to iterate over Employee array -->
+  <tr ng-repeat="emp in empList">
+  <!-- $index+1 gives the value 1,2 etc according to no of iteration -->
+    <td class="active">{{$index+1}}</td>
+    <td class="success">
+        {{emp.name}}
+    </td>
+    <!-- Note here that there should not be spaces between angular brackets -->
+    <!-- #profile/profileid is the link to profile -->
+    <td class="info"><a ng-href="#profile/{{emp.phone}}">Detalles</a></td>
+  </tr>
+
+</table>
