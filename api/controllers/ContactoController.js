@@ -6,6 +6,19 @@
  */
 
 module.exports = {
-	
+	findContactobyCredencialnum:function(req,res)
+      {
+        var id = req.param('id');
+        Contacto.findOne({credencial:id})
+            .exec(function(err,user){
+
+              if(err)
+                res.json({error:err});
+              if(user === undefined)
+                res.json({notFound:true});
+              else
+                res.json({notFound:false,userData:user});
+            });
+      }
 };
 

@@ -8,7 +8,23 @@
 module.exports = {
 
   attributes: {
-
+      credencial:{
+        type:"int",
+        required:true,
+        unique: true
+      },
+      email:{
+        type:"email",
+        required:false
+      },
+      telefono:{
+        type:"string",
+        required:false
+      },    
+      celular:{
+        type:"string",
+        required:false
+      }
   }
 };
 

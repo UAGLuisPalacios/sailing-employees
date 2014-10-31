@@ -1,0 +1,35 @@
+<!-- profile.html - shows employee details  -->
+<!-- Show the table if Employee returned by API is defined  -->
+<table ng-show="!notFound" class="table table-striped">
+  <tr>
+    <td><strong>Nombre : </strong></td>
+    <!-- Print the name -->
+    <td>{{employee.nombre}}</td>
+  </tr>
+  <tr>
+    <td><strong>Foto : </strong></td>
+    <td>
+        urlfoto
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Turno : </strong></td>
+    <td>{{employee.turno}}</td>
+  </tr>
+  <tr>
+    <td><strong>Codigo : </strong></td>
+    <td>{{employee.codigo}}</td>
+  </tr>
+  <tr>
+    <td><strong>Contacto : </strong></td>
+    <td><a ng-href="#/contacto/{{employee.credencial}}">Contacto</a></td>
+  </tr>
+  <tr>
+    <td><strong>Documentos : </strong></td>
+    <td><a ng-href="#/expediente/{{employee.credencial}}">Documentos</a></td>
+  </tr>
+</table>
+<!-- Show error if employee is not defined  -->
+<div ng-show="notFound"  class = "alert alert-danger col-md-12">
+  Error !!! Employee not Found
+</div>

@@ -11,13 +11,27 @@ module.exports = {
       credencial:{
         type:"int",
         required:true,
-        minLength: 5
-      },      
-      status:{
-        type:"int",
-        required:"false"
+        unique: true
+      },
+      nombre:{
+        type:"string",
+        required:true
+      },    
+      apellidop:{
+        type:"string",
+        required:true
+      }, 
+      apellidom:{
+        type:"string",
+        required:true
+      }, 
+      turno:{
+        type:"string",
+        required:true
+      }, 
+      codigo:{
+        type:"string",
+        required:true
       }
-
   }
 };
-
