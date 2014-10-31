@@ -6,6 +6,7 @@ define(function (require) {
   Controllers.controller('addExpController', require('controllers/addExpController'));
   Controllers.controller('HomeController', require('controllers/HomeController'));
   Controllers.controller('ExpController', require('controllers/ExpController'));
+  Controllers.controller('ContactController', require('controllers/ContactController'));
   return Controllers;
    
 });

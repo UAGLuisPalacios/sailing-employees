@@ -13,6 +13,11 @@ define(['angular','angular-route','controllers'], function (angular) {
                           templateUrl:'agenda-app/expediente',
                           controller:'ExpController'
                   })
+                 .when('/contacto/:credencialid',{
+                          //Profile View Routing to profile.html and controller - ProfileController
+                          templateUrl:'agenda-app/contacto',
+                          controller:'ContactController'
+                  })
                   .otherwise({
                           //default routing
                           redirectTo:'/'

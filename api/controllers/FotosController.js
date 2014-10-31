@@ -6,6 +6,10 @@
  */
 
 module.exports = {
-	
+	fotos: function (req, res) {
+    res.view('sailing-diary/index', {
+        title: "Agenda-app"
+    });
+    },
 };
 

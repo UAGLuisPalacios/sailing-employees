@@ -20,6 +20,11 @@ module.exports = {
     res.view('sailing-diary/expediente', {
         title: "Agenda-app"
     });
+    },
+    contacto: function (req, res) {
+    res.view('sailing-diary/contacto', {
+        title: "Agenda-app"
+    });
     }
 };
 

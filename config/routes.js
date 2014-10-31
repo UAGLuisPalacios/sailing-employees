@@ -34,6 +34,10 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+  
+  '/upload-file':{
+    view: 'uploadfile'  // view 'uploadfile' in views directory will loaded automatically
   }
 
   /***************************************************************************
