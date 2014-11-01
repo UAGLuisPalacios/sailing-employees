@@ -1,0 +1,51 @@
+<div class="row">
+      <div class="col-lg-12">
+        <div class="widget">
+          <div class="widget-header">
+            <i class="fa fa-tasks"></i> Expedientes
+            <a href="#/" class="pull-right">Modificar expediente</a>
+          </div>
+          <div class="widget-body medium no-padding">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                  <td>Nombre</td>
+                  <td>{{employee.nombre}}</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                  <td>Foto</td>
+                  <td><img ng-src="{{decachedImageUrl}}" width="250px" height="250px" /></td>
+                      <td><a ng-href="#expediente/{{employee.credencial}}">Modificar
+                      </i></span></a></td>
+                  </tr>
+                  <tr>
+                  <td>Turno</td>
+                  <td>{{employee.turno}}</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                  <td>Codigo</td>
+                  <td>{{employee.codigo}}</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                  <td>Contacto</td>
+                  <td></td>
+                      <td><a ng-href="#/contacto/{{employee.credencial}}">Contacto
+                      </i></span></a></td>
+                  </tr>
+                  <tr>
+                  <td>Documentos</td>
+                  <td></td>
+                      <td><a ng-href="#/documentos/{{employee.credencial}}">Documentos
+                      </i></span></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

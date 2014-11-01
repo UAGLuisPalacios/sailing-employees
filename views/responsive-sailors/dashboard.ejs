@@ -1,0 +1,67 @@
+
+    <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+      <div class="col-xs-12">
+        <alert data-ng-repeat="alert in alertsDisabled" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="widget">
+          <div class="widget-body">
+            <div class="widget-icon green pull-left">
+              <i class="fa fa-users"></i>
+            </div>
+            <div class="widget-content pull-left">
+              <div class="title">80</div>
+              <div class="comment">Contactos</div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="widget">
+          <div class="widget-body">
+            <div class="widget-icon red pull-left">
+              <i class="fa fa-tasks"></i>
+            </div>
+            <div class="widget-content pull-left">
+              <div class="title">16</div>
+              <div class="comment">Expedientes</div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="widget">
+          <div class="widget-body">
+            <div class="widget-icon orange pull-left">
+              <i class="fa fa-sitemap"></i>
+            </div>
+            <div class="widget-content pull-left">
+              <div class="title">225</div>
+              <div class="comment">Documentos</div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer visible-xs"></div>
+      <div class="col-lg-3 col-md-6 col-xs-12">
+        <div class="widget">
+          <div class="widget-body">
+            <div class="widget-icon blue pull-left">
+              <i class="fa fa-support"></i>
+            </div>
+            <div class="widget-content pull-left">
+              <div class="title">62</div>
+              <div class="comment">Imagenes</div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Main Content -->

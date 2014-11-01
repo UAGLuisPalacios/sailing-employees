@@ -1,6 +1,6 @@
-define(['angular','angular-cookies','ui-bootstrap','angular-ui-router'], function (angular) {
+define(['angular','angular-cookies','ui-bootstrap','angular-ui-router','controllers'], function (angular) {
     'use strict';  
-    var app =  angular.module('Dashboard', ['ui.bootstrap', 'ui.router', 'ngCookies']);
+    var app =  angular.module('Dashboard', ['controllers','ui.bootstrap', 'ui.router', 'ngCookies']);
     
     angular.module('Dashboard').config(['$stateProvider', '$urlRouterProvider', 
     function($stateProvider, $urlRouterProvider) {
@@ -12,11 +12,27 @@ define(['angular','angular-cookies','ui-bootstrap','angular-ui-router'], functio
     $stateProvider
         .state('index', {
             url: '/',
-            templateUrl: 'dashboard.html'
+            templateUrl: 'sntsa-expedientes/dashboard'
         })
-        .state('tables', {
-            url: '/tables', 
-            templateUrl: 'tables.html'
+        .state('expedientes', {
+            url: '/expedientes', 
+            templateUrl: 'sntsa-expedientes/expedientes',
+            controller: 'ExpedientesController'
+        })
+        .state('usuarios/:credencialid', {
+            url: '/usuarios/:credencialid', 
+            templateUrl: 'sntsa-expedientes/usuarios',
+            controller: 'UsuariosController'
+        })
+        .state('contacto/:credencialid', {
+            url: '/contacto/:credencialid', 
+            templateUrl: 'sntsa-expedientes/contacto',
+            controller: 'ContactoController'
+        })
+        .state('documentos/:credencialid', {
+            url: '/documentos/:credencialid', 
+            templateUrl: 'sntsa-expedientes/documentos',
+            controller: 'DocumentosController'
         });
     }]);
     
