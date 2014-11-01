@@ -18,6 +18,11 @@ define(['angular','angular-route','controllers'], function (angular) {
                           templateUrl:'agenda-app/contacto',
                           controller:'ContactController'
                   })
+                  .when('/docs/:credencialid',{
+                          //Profile View Routing to profile.html and controller - ProfileController
+                          templateUrl:'agenda-app/addDocument',
+                          controller:'addDocumentController'
+                  })
                   .otherwise({
                           //default routing
                           redirectTo:'/'

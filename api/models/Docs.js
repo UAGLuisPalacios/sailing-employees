@@ -8,7 +8,25 @@
 module.exports = {
 
   attributes: {
-
+      credencial:{
+        type:"int",
+        required:true,
+        unique: false
+      },
+      filename:{
+        type:"string",
+        required:true,
+        unique: true
+      },
+      extension:{
+        type:"string",
+        required:true,
+        unique: false
+      },
+      url:{
+        type:"string",
+        required:true
+      }
   }
 };
 

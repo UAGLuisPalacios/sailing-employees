@@ -1,0 +1,37 @@
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-click="addItem()">Add</button>
+     <div class="row h3">
+          <div class="col-md-3">Filename</div>
+          <div class="col-md-3">Extension</div>
+          <div class="col-md-3">Url</div>
+          <div class="col-md-3"></div>
+     </div>
+ 
+        <div class="row" ng-repeat="doc in docsList">
+          <div class="col-md-3" ng-bind="doc.filename"></div>
+          <div class="col-md-3" ng-bind="doc.extension"></div>
+          <div class="col-md-3">
+              <a ng-href="/file/downloadFilebyurl/?url={{doc.url}}/{{doc.filename}}{{doc.extension}}">{{doc.url}}</a>
+          </div>
+          <div class="col-md-3">
+           <a ng-href="/file/deleteFilebyurl/?url={{doc.url}}/{{doc.filename}}{{doc.extension}}&filename={{doc.filename}}">Eliminar</a></div>
+        </div>
+ 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-show="displayForm">
+  <div class="modal-dialog">
+    <div class="modal-content">      
+      <div class="modal-body">
+       
+          <form id="uploadForm"
+          enctype="multipart/form-data"
+          action="/file/docload"
+          method="post">
+          <input type="text" name="title" ng-model="credencialid" /><br>
+          <input type="file" name="uploadFile" />
+          <input type="submit" value="submit"/>
+          </form>
+         
+    </div>
+  </div>
+</div>
+</div>

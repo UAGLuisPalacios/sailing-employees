@@ -7,10 +7,7 @@ define(function () {
   $scope.empList=[];
   $http.get("http://localhost:1337/employee/")
        .success(function(data){
-        
-  
           $log.info(data);
-          $scope.empList=data;
           console.log("olo");
           //Update empList with data
           $log.info($scope.empList);

@@ -2,6 +2,7 @@ define(function () {
     return ['$scope', '$http', '$log','$routeParams', function($scope, $http, $log, $routeParams) {
       //Store empnum in Controller
       $scope.credencialid = $routeParams.credencialid;
+      $scope.decachedImageUrl = 'images/' + $routeParams.credencialid + '.jpg?decache=' + Math.random();
       //Initialist the employee Data
       $scope.employee={};
       //Initialise Error Handler

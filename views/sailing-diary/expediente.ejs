@@ -9,7 +9,7 @@
   <tr>
     <td><strong>Foto : </strong></td>
     <td>
-        <img ng-src="images/{{employee.credencial}}.jpg" />
+        <img ng-src="{{decachedImageUrl}}" width="400px" height="400px" />
     </td>
   </tr>
   <tr>
@@ -26,7 +26,7 @@
   </tr>
   <tr>
     <td><strong>Documentos : </strong></td>
-    <td><a ng-href="#/expediente/{{employee.credencial}}">Documentos</a></td>
+    <td><a ng-href="#/docs/{{employee.credencial}}">Documentos</a></td>
   </tr>
 </table>
 <!-- Show error if employee is not defined  -->
