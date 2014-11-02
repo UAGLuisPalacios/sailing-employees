@@ -35,6 +35,31 @@ module.exports = {
     res.view('responsive-sailors/documentos', {
         title: "Agenda-app"
     });
+    },
+    expediente_nuevo: function (req, res) {
+    res.view('responsive-sailors/expediente_nuevo', {
+        title: "Agenda-app"
+    });
+    },
+    editar_expediente: function (req, res) {
+    res.view('responsive-sailors/editar_expediente', {
+        title: "Agenda-app"
+    });
+    },
+    contacto_editar: function (req, res) {
+    res.view('responsive-sailors/contacto_editar', {
+        title: "Agenda-app"
+    });
+    },
+    buscar_expediente: function (req, res) {
+    res.view('responsive-sailors/buscar_expediente', {
+        title: "Agenda-app"
+    });
+    },
+    foto_editar: function (req, res) {
+    res.view('responsive-sailors/foto_editar', {
+        title: "Agenda-app"
+    });
     }
 };
 

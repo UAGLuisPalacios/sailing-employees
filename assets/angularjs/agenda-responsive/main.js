@@ -5,7 +5,8 @@ paths: {
 'angular-cookies': '../../vendor/angular-cookies/angular-cookies',
 'angular-ui-router': '../../vendor/angular-ui-router/angular-ui-router',
 'ui-bootstrap': '../../vendor/angular-bootstrap/ui-bootstrap-tpls',
-'jquery': '../../vendor/jquery/jquery'
+'jquery': '../../vendor/jquery/jquery',
+'bootstrapJs': '../../vendor/bootstrap/bootstrap'
 },
 /**
 * for libs that either do not support AMD out of the box, or
@@ -24,7 +25,8 @@ shim: {
 window.name = "NG_DEFER_BOOTSTRAP!";
 require([
 'angular',
-'app'
+'app',
+'bootstrapJs'
 ], function(angular, app) {
 'use strict';
 var $html = angular.element(document.getElementsByTagName('html')[0]);

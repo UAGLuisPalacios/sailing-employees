@@ -28,5 +28,11 @@ module.exports = {
         required:true
       }
   }
+    /*,
+    afterCreate: function(values, next){
+        var viewPath = '/responsive-sailors/documentos';
+        sails.renderView(viewPath, { title: 'Express' }, next);
+        next();
+    }*/
 };
 

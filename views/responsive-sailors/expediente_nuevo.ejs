@@ -1,0 +1,13 @@
+          <div class="row">
+          <div class="col-lg-12">
+          <div class="form-group"> <input type="text" ng-model="employee.credencial"  class="form-control" placeholder="Credencial"/></div>   
+          <div class="form-group">  <input type="text" ng-model="employee.nombre"  class="form-control" placeholder="Nombre"/></div>
+          <div class="form-group"><input type="text" ng-model="employee.apellidop"  class="form-control" placeholder="Apellido Paterno"/></div>
+          <div class="form-group"> <input type="text" ng-model="employee.apellidom"  class="form-control" placeholder="Apellido Materno"/></div>
+          <div class="form-group"> <input type="text" ng-model="employee.turno"  class="form-control" placeholder="Turno"/></div>   
+          <div class="form-group"> <input type="text" ng-model="employee.codigo"  class="form-control" placeholder="Codigo"/></div>
+          <br><br>     
+          <a class="btn btn-primary" ng-href="/expediente/create?credencial={{employee.credencial}}&nombre={{employee.nombre}}&apellidop={{employee.apellidop}}&apellidom={{employee.apellidom}}&turno={{employee.turno}}&codigo={{employee.codigo}}">Generar expediente</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          
+          </div></div>

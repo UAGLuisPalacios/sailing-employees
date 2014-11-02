@@ -1,0 +1,17 @@
+              
+          
+          <div class="row">
+          <div class="col-lg-12">
+          Porfavor, espere un momento <br><br>
+          <img ng-src="{{decachedImageUrl}}" width="250px" height="250px" />
+          <br><br>
+          <form id="uploadForm"
+          enctype="multipart/form-data"
+          action="/file/upload"
+          method="post">
+          <input type="hidden" name="title" ng-value="credencialid" />
+          <input type="file" name="uploadFile" />
+          <input type="submit" value="submit"/>
+          </form>
+          
+          </div></div>

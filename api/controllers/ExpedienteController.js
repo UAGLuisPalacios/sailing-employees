@@ -19,6 +19,16 @@ module.exports = {
               else
                 res.json({notFound:false,userData:user});
             });
-      }
+      },
+    
+    create: function(req, res) {
+      var params = req.params.all();
+      var cred = req.param('credencial');
+      Expediente.create(params, function(err, sleep) {
+      if (err) return next(err);
+      res.status(201);
+      return res.redirect('/contacto/create?credencial='+ cred + '&email=email@example.com&telefono=telefono&celular=celular');
+    });
+    }
 };
 

@@ -33,6 +33,29 @@ define(['angular','angular-cookies','ui-bootstrap','angular-ui-router','controll
             url: '/documentos/:credencialid', 
             templateUrl: 'sntsa-expedientes/documentos',
             controller: 'DocumentosController'
+        })
+        .state('expediente_nuevo', {
+            url: '/expediente_nuevo', 
+            templateUrl: 'sntsa-expedientes/expediente_nuevo'
+        })
+        .state('editar_expediente/:credencialid', {
+                url: '/editar_expediente/:credencialid', 
+                templateUrl: 'sntsa-expedientes/editar_expediente',
+                controller: 'Expediente_editarController'
+        })
+        .state('contacto_editar/:credencialid', {
+                url: '/contacto_editar/:credencialid', 
+                templateUrl: 'sntsa-expedientes/contacto_editar',
+                controller: 'Contacto_editarController'
+        })
+        .state('buscar_expediente', {
+                url: '/buscar_expediente', 
+                templateUrl: 'sntsa-expedientes/buscar_expediente'
+        })
+        .state('foto_editar/:credencialid', {
+                url: '/foto_editar/:credencialid', 
+                templateUrl: 'sntsa-expedientes/foto_editar',
+                controller: 'Foto_editarController'
         });
     }]);
     

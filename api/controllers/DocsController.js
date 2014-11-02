@@ -7,12 +7,6 @@
 var path = require('path');
 
 module.exports = {
-    index: function (req, res) {
-    res.view('sailing-diary/addDocument', {
-        title: "Add document"
-    });
-    },
-    
 	findDocsbyCredencialnum:function(req,res)
       {
         var id = req.param('id');
@@ -30,7 +24,7 @@ module.exports = {
     
     deleteDocsbyFilename:function(req,res)
       {
-        //var cred = req.query('credencial');
+        var cred = req.query.credencial;
         var filen = req.query.filename;
         Docs.findOne({filename:filen})
             .exec(function(err,user){
@@ -41,10 +35,20 @@ module.exports = {
               else{ 
                     Docs.destroy(user.id, function (err) {
                         if (err) return next (err);
-                        res.json({"test":"test"});
+                        return res.redirect('/sntsa-expedientes#/documentos/'+ cred)
                      });
                  }
              });
-      }
+      },
+    
+    create: function(req, res, next) {
+      var params = req.params.all();
+      var cred = req.param('credencial');
+      Docs.create(params, function(err, sleep) {
+      if (err) return next(err);
+      res.status(201);
+      return res.redirect('/sntsa-expedientes#/documentos/'+ cred);
+    });
+    }
 };
 

@@ -24,6 +24,7 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
   <!--STYLES-->
+  <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="/styles/bootstrap.css">
   <link rel="stylesheet" href="/styles/dashboard.css">
   <link rel="stylesheet" href="/styles/font-awesome.css">
@@ -33,10 +34,10 @@
   
   
 <body ng-controller="MasterCtrl">
+    
   <div id="page-wrapper" ng-class="{'active': toggle}" ng-cloak>
 
     <!-- Sidebar -->
-
     <div id="sidebar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-main">
@@ -54,10 +55,19 @@
         </li>
         <li class="sidebar-title separator"><span>Atajos</span></li>
         <li class="sidebar-list">
-          <a href="#/">Buscar expediente <span class="menu-icon fa fa-external-link"></span></a>
+          <a href="#/buscar_expediente">Buscar expediente <span class="menu-icon fa fa-external-link"></span></a>
         </li>
         <li class="sidebar-list">
-          <a href="#/">Nuevo expediente <span class="menu-icon fa fa-external-link"></span></a>
+          <a href="#/expediente_nuevo">Nuevo expediente <span class="menu-icon fa fa-external-link"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/editar_expediente/123">Editar expediente <span class="menu-icon fa fa-external-link"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/contacto_editar/123">Editar Contacto <span class="menu-icon fa fa-external-link"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/foto_editar/123">Editar Foto <span class="menu-icon fa fa-external-link"></span></a>
         </li>
       </ul>
       <div class="sidebar-footer">
@@ -85,7 +95,6 @@
       <div class="page-content">
 
         <!-- Header Bar -->
-
         <div class="row header">
           <div class="col-xs-12">
             <div class="user pull-right">
@@ -127,6 +136,7 @@
 
         <!-- Main Content -->
         <section data-ui-view></section>
+        
       </div><!-- End Page Content -->
     </div><!-- End Content Wrapper -->
   </div><!-- End Page Wrapper -->
