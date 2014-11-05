@@ -6,6 +6,16 @@
  */
 
 module.exports = {
+    count:function(req,res)
+      {
+        Expediente.count(function (err, num) {
+        if(err) {
+           return console.log(err);
+        }
+        console.log(num);
+        });
+      },
+
 	findExpedientebyCredencialnum:function(req,res)
       {
         var id = req.param('id');
@@ -29,6 +39,30 @@ module.exports = {
       res.status(201);
       return res.redirect('/contacto/create?credencial='+ cred + '&email=email@example.com&telefono=telefono&celular=celular');
     });
+    },
+    
+    update: function (req, res, next) {
+
+        var criteria = {};
+        var cred = req.param('credencial');
+
+        criteria = _.merge({}, req.params.all(), req.body);
+
+        var id = req.param('id');
+
+        if (!id) {
+            return res.badRequest('No id provided.');
+        }
+
+        Expediente.update(id, criteria, function (err, expediente) {
+
+            if(expediente.length === 0) return res.notFound();
+
+            if (err) return next(err);
+
+            return res.redirect('/sntsa-expedientes#/usuarios/' + cred );
+
+        });
     }
 };
 

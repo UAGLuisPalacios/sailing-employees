@@ -2,8 +2,6 @@ define(function () {
     return ['$scope', '$http', '$log','$stateParams', function($scope, $http, $log, $stateParams) {
       //Store empnum in Controller
       $scope.credencialid = $stateParams.credencialid;
-      $scope.decachedImageUrl = 'images/' + $stateParams.credencialid + '.jpg?decache=' + Math.random();
-        
       //Initialist the employee Data
       $scope.employee={};
       //Initialise Error Handler
@@ -27,5 +25,28 @@ define(function () {
               //Log error Data
               $log.info(data);
            });
+        
+        $http.get("http://localhost:1337/fotos/findPhotobyCredencialnum/"+$scope.credencialid)
+           .success(function(data){
+              //On successful API CALL check whether empty data is returned or not
+              if(data.notFound === true)
+              {
+                  //If employee not Found set error flag -- ng-show manages the rest 
+                  $scope.notFound = true;
+                  $scope.decachedImageUrl = 'images/demo.jpg';
+                  return;
+              }
+                var a = parseInt(data.userData.version);
+                $scope.version = a;
+                $scope.decachedImageUrl = 'images/' + $stateParams.credencialid + $scope.version + '.jpg?decache=' + Math.random();
+           })
+           .error(function(data){
+              //Log error Data
+              $log.info("error get");
+              $log.info(data);
+            
+                $scope.decachedImageUrl = 'images/demo.jpg';
+           });
+        
     }];
 });

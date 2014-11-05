@@ -8,7 +8,16 @@
 module.exports = {
 
   attributes: {
-
+      credencial:{
+        type:"int",
+        required:true,
+        unique: true
+      },
+      version:{
+        type:"int",
+        required:true,
+        unique: false
+      }
   }
 };
 

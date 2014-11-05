@@ -7,6 +7,16 @@
 var path = require('path');
 
 module.exports = {
+    count:function(req,res)
+      {
+        Docs.count(function (err, num) {
+        if(err) {
+           return console.log(err);
+        }
+        console.log(num);
+        });
+      },
+    
 	findDocsbyCredencialnum:function(req,res)
       {
         var id = req.param('id');

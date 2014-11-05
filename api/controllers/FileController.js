@@ -12,9 +12,11 @@ module.exports = {
       if(req.method === 'GET')
           return res.json({'status':'GET not allowed'});                       // Call to /upload via GET is error
         
+      var version = parseInt(req.param('version')) + 1;
+        
       var uploadOptions = {
         dirname: sails.config.appPath + '/assets/images',
-        saveAs: function (__newFileStream,cb) { cb(null, req.param('title')+path.extname(__newFileStream.filename)); },
+        saveAs: function (__newFileStream,cb) { cb(null, req.param('title')+version+path.extname(__newFileStream.filename)); },
         maxBytes: 20 * 1000 * 1000
       }
       
@@ -23,7 +25,8 @@ module.exports = {
             return res.serverError(err);
         }
         else{
-            return res.redirect('sntsa-expedientes#/foto_editar/' + req.param('title'));
+            //return res.redirect('sntsa-expedientes#/foto_editar/' + req.param('title'));
+            return res.redirect('/fotos/update?credencial='+ req.param('title') + '&version=' + version + '&id=' + req.param('id'));
         }
       });
   },
